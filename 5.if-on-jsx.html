@@ -12,10 +12,13 @@
     const user = {firstName: 'Shiv', lastName: 'Raj'}
 
     function fullName(user) {
-      return user.firstName + ' ' + user.lastName
+      if (user) {
+        return user.firstName + ' ' + user.lastName
+      }
+      return 'Stranger !!'
     }
 
-    const element = <h1>Hello, {fullName(user)}</h1>
+    const element = <h1>Hello, {fullName("")}</h1>
 
     ReactDOM.render(
      element,
