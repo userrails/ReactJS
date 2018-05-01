@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Use of createElement using props</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    const name = 'User Rails'
+    const email = 'userrails@gmail.com'
+
+    function nameComponent (props) {
+      return <h1>{props.name}</h1>
+    }
+
+    function emailComponent (props) {
+      return <h1>{props.email}</h1>
+    }
+
+    function App () {
+      return (
+        <div id="container">
+        <NameComponent name={name}>
+        <EmailComponent email={email}>
+        </div>
+        )
+    }
+
+    ReactDOM.render(
+      <App />,
+      document.getElementById('app')
+    )
+  </script>
+</body>
+</html>
