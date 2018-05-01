@@ -15,9 +15,10 @@
       return user.firstName + ' ' + user.lastName
     }
 
+    const element = <h1>Hello, {fullName(user)}</h1>
 
     ReactDOM.render(
-     fullName(user),
+     element,
      document.getElementById('app')
     )
   </script>
