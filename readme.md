@@ -119,3 +119,109 @@ Router Tutorial:
 Follow all the steps mentioned above as per requirements:
 I suggest you to start by in stalling react-router-dom
 sudo npm install react-router-dom
+
+Configure the .babelrc file in the root of the project
+touch .babelrc
+{
+  "presets": ["es2015", "react"]
+}
+
+index.html
+------------
+<body>
+  <div id = "app"></div>
+  <script type = "text/javascript" src = "bundle.js"></script>
+</body>
+
+webpack.config.js
+-------------------
+module.exports = {
+   entry: './app/main.js',
+   output: {
+      filename: 'bundle.js'
+   },
+   module: {
+      loaders: [
+         {
+            loader: 'babel-loader',
+            test: /\.js$/,
+            exclude: /node_modules/
+         }
+      ]
+   },
+   devServer: {
+      port: 7777
+   }
+};
+
+add router:
+Main.js
+--------
+import React from 'react';
+import { render } from 'react-dom';
+import App from './App';
+
+render(<App />, document.getElementById('app'));
+
+App.js
+-------
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Home from './Home';
+import Login from './Login';
+
+class App extends Component {
+   render() {
+      return (
+         <Router>
+            <div>
+               <h2>Welcome to React Router Tutorial</h2>
+               <ul>
+                  <li><Link to={'/'}>Home</Link></li>
+                  <li><Link to={'/Login'}>Login</Link></li>
+               </ul>
+               <hr />
+               
+               <Switch>
+                  <Route exact path='/' component={Home} />
+                  <Route exact path='/Login' component={Login} />
+               </Switch>
+            </div>
+         </Router>
+      );
+   }
+}
+export default App;
+
+step 3: create components
+Home.js
+--------
+import React, { Component } from 'react';
+
+class Home extends Component {
+   render() {
+      return (
+         <div>
+            <h2>Home</h2>
+         </div>
+      );
+   }
+}
+export default Home;
+
+Login.js
+---------
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class Login extends Component {
+   render() {
+      return (
+         <div>
+            <h2>Login</h2>
+         </div>
+      );
+   }
+}
+export default Login;
+
