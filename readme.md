@@ -114,3 +114,8 @@ yarn add webpack-cli -D
  >> To get rid from this error, just you need to change loaders to rules on webpack.config.js
  i.e: module: {
       rules: [
+
+Router Tutorial:
+Follow all the steps mentioned above as per requirements:
+I suggest you to start by in stalling react-router-dom
+sudo npm install react-router-dom
