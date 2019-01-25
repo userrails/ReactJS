@@ -30,6 +30,7 @@ you want
 At last, set babel loaders to search for js files, also use es2015 and react
 presets that we already installed
 
+```
 webpack.config.js
 var config = {
   entry: './main.js',
@@ -55,6 +56,7 @@ var config = {
   }
 }
 module.exports = config;
+```
 
 10. open package.json and delete "test":"echo......" which is inside "scripts"
     object, we are deleting as we do not need any testing
@@ -68,12 +70,15 @@ module.exports = config;
 files so we don't need to refresh the browser every time we change our code
 
 11. index.html
+```
 <body>
   <div id="app"></div>
   <script src="index.js"></script>
 </body>
+```
 
 12. App.jsx
+```
 import React from 'react'
 class App extends React.Component {
   render () {
@@ -81,15 +86,18 @@ class App extends React.Component {
       <div>Hello world!!</div> 
     );
   }
--}
+}
 export default App;
+```
 
 13. main.js # where App.jsx component will import and render it to our App
     element
+```
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
 ReactDOM.render(<App />, document.getElementById('app'));
+```
 
 Note: To make component reusable, you need to export component after creation
 and import it in the file where you want to use it
@@ -122,19 +130,24 @@ I suggest you to start by in stalling react-router-dom
 
 Configure the .babelrc file in the root of the project
 touch .babelrc
+```
 {
   "presets": ["es2015", "react"]
 }
+```
 
 index.html
 ------------
+```
 <body>
   <div id = "app"></div>
   <script type = "text/javascript" src = "bundle.js"></script>
 </body>
+```
 
 webpack.config.js
 -------------------
+```
 module.exports = {
    entry: './app/main.js',
    output: {
@@ -153,18 +166,22 @@ module.exports = {
       port: 7777
    }
 };
+```
 
 add router:
 Main.js
 --------
+```
 import React from 'react';
 import { render } from 'react-dom';
 import App from './App';
 
 render(<App />, document.getElementById('app'));
+```
 
 App.js
 -------
+```
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './Home';
@@ -192,10 +209,12 @@ class App extends Component {
    }
 }
 export default App;
+```
 
 step 3: create components
 Home.js
 --------
+```
 import React, { Component } from 'react';
 
 class Home extends Component {
@@ -208,9 +227,11 @@ class Home extends Component {
    }
 }
 export default Home;
+```
 
 Login.js
 ---------
+```
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -224,4 +245,4 @@ class Login extends Component {
    }
 }
 export default Login;
-
+```
