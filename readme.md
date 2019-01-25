@@ -247,3 +247,16 @@ class Login extends Component {
 }
 export default Login;
 ```
+
+* Some new errors & solutions
+Cannot find module babel-preset-react
+Cannot find module babel-preset-es2015
+sudo npm install --save-dev @babel/preset-react
+sudo npm install --save-dev @babel/preset-es2015
+
+Now update .babelrc file with following codes
+```
+{
+  "presets": ["@babel/react", "@babel/preset-env"]
+}
+```
