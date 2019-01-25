@@ -1,26 +1,26 @@
-* 1. make dir let say HelloReact
+1. make dir let say HelloReact
 2. cd HelloReact
 3. npm init # will create package.json
 4. install global packages, we need babel plugins
-npm install -g babel
-npm install -g bable-cli
+* npm install -g babel
+* npm install -g bable-cli
 5. add dependencies and plugins, we need webpack bundler, --save command will
    add packages on the package.json file
-npm install webpack --save
-npm install webpack-dev-server --save
+* npm install webpack --save
+* npm install webpack-dev-server --save
 6. To use React, install it first with --save command
-npm install react --save
-npm install react-dom --save
+* npm install react --save
+* npm install react-dom --save
 7. let's install other babel plugins as well
-npm install babel-core
-npm install babel-loader
-npm install babel-preset-react
-npm install babel-preset-es2015
+* npm install babel-core
+* npm install babel-loader
+* npm install babel-preset-react
+* npm install babel-preset-es2015
 8.create some required files
-touch index.html
-touch App.jsx
-touch main.js
-touch webpack.config.js
+* touch index.html
+* touch App.jsx
+* touch main.js
+* touch webpack.config.js
 9. set compiler, server and loaders
 open webpack.config.js file and add the following code
 set main.js as webpack entry point
@@ -59,11 +59,11 @@ module.exports = config;
 10. open package.json and delete "test":"echo......" which is inside "scripts"
     object, we are deleting as we do not need any testing
     Add "start" command instead
-     "start": "webpack-dev-server --hot"
+     * "start": "webpack-dev-server --hot"
     To execute above script, it requires webpack-dev-server
     To install webpack-dev-server, use the following commands
-    npm install webpack-dev-server -g
-    npm start # starts the server
+    * npm install webpack-dev-server -g
+    * npm start # starts the server
     --hot command will add live reload after something is changed inside our
 files so we don't need to refresh the browser every time we change our code
 
@@ -95,19 +95,19 @@ Note: To make component reusable, you need to export component after creation
 and import it in the file where you want to use it
 
 14. run the server and access on browser with localhost:8080
-npm start
+* npm start
 
 15. sometime you will get couple of errors, those errors are:
 WARNING in configuration
 The 'mode' option has not been set, webpack will fallback to 'production' for this value.
 Solution: just add below code on webpack.config.js
-mode: 'development'
+* mode: 'development'
 
 The CLI moved into a separate package: webpack-cli.
 Please install 'webpack-cli' in addition to webpack itself to use the CLI.
 -> When using npm: npm install webpack-cli -D
-npm install webpack-cli -D
-yarn add webpack-cli -D
+* npm install webpack-cli -D
+* yarn add webpack-cli -D
 
 ✖ ｢wds｣: Invalid configuration object. Webpack has been initialised using a configuration object that does not match the API schema.
  - configuration.module has an unknown property 'loaders'.
@@ -118,7 +118,7 @@ yarn add webpack-cli -D
 Router Tutorial:
 Follow all the steps mentioned above as per requirements:
 I suggest you to start by in stalling react-router-dom
-sudo npm install react-router-dom
+* sudo npm install react-router-dom
 
 Configure the .babelrc file in the root of the project
 touch .babelrc
