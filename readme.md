@@ -3,7 +3,7 @@
 3. npm init # will create package.json
 4. install global packages, we need babel plugins
 * npm install -g babel
-* npm install -g bable-cli
+* npm install -g babel-cli
 5. add dependencies and plugins, we need webpack bundler, --save command will
    add packages on the package.json file
 * npm install webpack --save
