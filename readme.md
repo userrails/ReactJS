@@ -16,6 +16,7 @@
 * npm install babel-loader
 * npm install babel-preset-react
 * npm install babel-preset-es2015
+
 8.create some required files
 * touch index.html
 * touch App.jsx
