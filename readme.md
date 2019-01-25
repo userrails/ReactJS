@@ -1,4 +1,4 @@
-1. make dir let say HelloReact
+* 1. make dir let say HelloReact
 2. cd HelloReact
 3. npm init # will create package.json
 4. install global packages, we need babel plugins
